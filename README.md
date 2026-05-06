@@ -1,10 +1,60 @@
 # ytdlp
 
-YouTube URL을 `wav`, `mp3`, `mp4`로 다운로드하는 간단한 Node.js CLI입니다.
+YouTube URL을 `wav`, `mp3`, `mp4`로 다운로드하는 간단한 도구입니다.
 
 내부적으로 `yt-dlp`를 실행하고, 오디오/비디오 변환은 `ffmpeg`를 사용합니다.
 
-## Requirements
+## Windows 사용 방법
+
+배포 파일:
+
+```text
+ytdlp-windows-bat.zip
+```
+
+사용 순서:
+
+1. `ytdlp-windows-bat.zip` 파일을 다운로드합니다.
+
+2. zip 파일 압축을 풉니다.
+
+3. 압축을 푼 폴더 안에서 원하는 파일을 더블클릭합니다.
+
+```text
+download-wav.bat
+download-mp3.bat
+download-mp4.bat
+```
+
+4. 검은 창이 열리면 URL을 입력합니다.
+
+5. 여러 개를 다운로드하려면 URL을 한 줄에 하나씩 입력합니다.
+
+```text
+https://www.youtube.com/watch?v=example1
+https://www.youtube.com/watch?v=example2
+https://www.youtube.com/watch?v=example3
+```
+
+6. URL 입력이 끝나면 아무것도 입력하지 않은 빈 줄에서 Enter를 누릅니다.
+
+7. 저장 폴더를 입력합니다.
+
+8. 저장 폴더를 비워두고 Enter를 누르면 같은 폴더 안의 `downloads` 폴더에 저장됩니다.
+
+## macOS 사용 방법
+
+macOS는 현재 개발자용 CLI 방식으로 실행합니다.
+
+Homebrew 기준:
+
+```bash
+brew install node yt-dlp ffmpeg
+```
+
+## Developer Setup
+
+Node.js CLI를 직접 실행하려면 아래 프로그램이 필요합니다.
 
 - Node.js LTS
 - npm
@@ -20,57 +70,21 @@ yt-dlp --version
 ffmpeg -version
 ```
 
-## Install Dependencies
+의존성 설치:
 
 ```bash
 npm install
 ```
 
-## External Tool Setup
+## Windows 배포본 만들기
 
-### Windows 10
-
-Node.js:
-
-- https://nodejs.org/
-- LTS 설치 파일을 받아 기본 옵션으로 설치
-
-yt-dlp:
-
-- https://github.com/yt-dlp/yt-dlp/releases/latest
-- `yt-dlp.exe` 다운로드
-- `C:\Tools\yt-dlp.exe`에 배치
-
-ffmpeg:
-
-- https://www.gyan.dev/ffmpeg/builds/
-- `ffmpeg-release-essentials.zip` 다운로드
-- 압축 해제 후 `bin\ffmpeg.exe`를 `C:\Tools\ffmpeg.exe`에 배치
-
-PATH:
-
-- Windows 검색에서 `환경 변수` 실행
-- `시스템 환경 변수 편집` → `환경 변수`
-- `시스템 변수` → `Path` → `편집`
-- `C:\Tools` 추가
-- PowerShell을 새로 열고 버전 확인
-
-```powershell
-node --version
-npm --version
-yt-dlp --version
-ffmpeg -version
-```
-
-### macOS
-
-Homebrew 기준:
+`windows-bat` 폴더를 zip으로 압축하면 됩니다.
 
 ```bash
-brew install node yt-dlp ffmpeg
+zip -r ytdlp-windows-bat.zip windows-bat
 ```
 
-## Usage
+## Node CLI Usage
 
 기본 포맷은 `wav`입니다.
 
