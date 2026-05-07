@@ -64,6 +64,16 @@ Homebrew 기준:
 brew install node yt-dlp ffmpeg
 ```
 
+## Google Colab 사용 방법
+
+Colab에서 실행하고 다운로드 결과를 Google Drive에 저장하려면 아래 노트북을 사용합니다.
+
+```text
+colab/ytdlp_colab.ipynb
+```
+
+자세한 순서는 `colab/README.md`를 참고하세요.
+
 ## Developer Setup
 
 Node.js CLI를 직접 실행하려면 아래 프로그램이 필요합니다.
